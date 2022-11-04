@@ -17,16 +17,18 @@ let paraDescanso
 
 
 function chamaEstudo(){
-    paraPrimeiroIntervalo = setInterval(estudo, 1000);
+    paraPrimeiroIntervalo = setInterval(estudo, 10);
 }
 function chamaDescanso(){
-    paraDescanso = setInterval(descanso, 1000);
+    paraDescanso = setInterval(descanso, 10);
 }
 
 
 
 function descanso (){
+      
         
+
         segundosDescanso.innerHTML = segundoscontagemDescanso 
         minutosDescanso.innerHTML = minutosCotagemDescanso
    
@@ -44,9 +46,9 @@ function descanso (){
             segundoscontagemDescanso = 0
             segundosDescanso.innerHTML = segundoscontagemDescanso
             paraFuncaoDescanso()
-            
-            
-                 
+            segundoscontagemDescanso = 60
+            minutosCotagemDescanso = 5
+          
         }
         
    
@@ -54,7 +56,7 @@ function descanso (){
 
 
 function estudo(){
-    
+
     minutos.innerHTML = minutosContagem
     segundos.innerHTML = segundosContagem
 
@@ -75,6 +77,8 @@ function estudo(){
     }
     if(segundosContagem <= 0 && minutosContagem <=0){
         chamaDescanso()
+        minutosContagem = 25
+        segundosContagem = 60
     }
     
     
